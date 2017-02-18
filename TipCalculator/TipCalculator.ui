@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TipCalculatorClass</class>
+ <widget class="QMainWindow" name="TipCalculatorClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>275</width>
+    <height>235</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TipCalculator</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(45, 45, 45);</string>
+   </property>
+   <widget class="QPushButton" name="calculateButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+border:1px solid rgb(27, 27, 27);
+border-bottom:2px solid rgb(27, 27, 27);
+
+background-color:rgb(37, 37, 37);
+color:rgb(173, 173, 173);
+border-radius:5px;
+}
+
+QPushButton:hover {
+	color:white;
+}
+
+QPushButton:pressed {
+	border-bottom:0px solid gray;
+}</string>
+    </property>
+    <property name="text">
+     <string>Calculate</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="billInput">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid rgb(27, 27, 27);
+border-bottom:2px solid rgb(27, 27, 27);
+
+background-color:rgb(37, 37, 37);
+color:rgb(173, 173, 173);
+border-radius:5px;
+padding:5px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>251</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:gray;
+padding-left:2px;</string>
+    </property>
+    <property name="text">
+     <string>Your bill:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="percentInput">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid rgb(27, 27, 27);
+border-bottom:2px solid rgb(27, 27, 27);
+
+background-color:rgb(37, 37, 37);
+color:rgb(173, 173, 173);
+border-radius:5px;
+padding:5px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>251</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:gray;
+padding-left:2px;</string>
+    </property>
+    <property name="text">
+     <string>Percentage:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="infoLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>251</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+background-color:rgb(10,10,10,50);
+padding-left:5px;
+border-radius:10px/30px;</string>
+    </property>
+    <property name="text">
+     <string>Calculate your tip.</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="TipCalculator.qrc"/>
+ </resources>
+ <connections/>
+</ui>
