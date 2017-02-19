@@ -38,9 +38,14 @@ public:
         if (TipCalculatorClass->objectName().isEmpty())
             TipCalculatorClass->setObjectName(QStringLiteral("TipCalculatorClass"));
         TipCalculatorClass->resize(275, 235);
+        TipCalculatorClass->setStyleSheet(QStringLiteral("background-color:rgb(255, 255, 255,0);"));
         centralWidget = new QWidget(TipCalculatorClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        centralWidget->setStyleSheet(QStringLiteral("background-color:rgb(45, 45, 45);"));
+        centralWidget->setStyleSheet(QLatin1String("\n"
+"QWidget {\n"
+"	background-color:rgb(45, 45, 45);\n"
+"	border-top:1px solid rgb(2, 179, 255);\n"
+"}"));
         calculateButton = new QPushButton(centralWidget);
         calculateButton->setObjectName(QStringLiteral("calculateButton"));
         calculateButton->setGeometry(QRect(10, 180, 121, 41));
@@ -77,7 +82,8 @@ public:
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(10, 60, 251, 16));
         label->setStyleSheet(QLatin1String("color:gray;\n"
-"padding-left:2px;"));
+"padding-left:2px;\n"
+"border:none;"));
         percentInput = new QLineEdit(centralWidget);
         percentInput->setObjectName(QStringLiteral("percentInput"));
         percentInput->setGeometry(QRect(10, 140, 251, 31));
@@ -93,17 +99,19 @@ public:
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(10, 120, 251, 16));
         label_2->setStyleSheet(QLatin1String("color:gray;\n"
-"padding-left:2px;"));
+"padding-left:2px;\n"
+"border:none;"));
         infoLabel = new QLabel(centralWidget);
         infoLabel->setObjectName(QStringLiteral("infoLabel"));
-        infoLabel->setGeometry(QRect(10, 0, 251, 51));
+        infoLabel->setGeometry(QRect(10, 10, 251, 41));
         QFont font1;
         font1.setPointSize(8);
         infoLabel->setFont(font1);
         infoLabel->setStyleSheet(QLatin1String("color:white;\n"
-"background-color:rgb(10,10,10,50);\n"
+"background-color:rgb(10,10,10,80);\n"
 "padding-left:5px;\n"
-"border-radius:10px/30px;"));
+"border-radius:5px;\n"
+"border:none;"));
         TipCalculatorClass->setCentralWidget(centralWidget);
 
         retranslateUi(TipCalculatorClass);
