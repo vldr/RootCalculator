@@ -1,5 +1,8 @@
 #include "TipCalculator.h"
 
+#include <QtPlugin>
+Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
+
 TipCalculator::TipCalculator(QWidget *parent)
 	: QMainWindow(parent)
 {
@@ -16,7 +19,7 @@ TipCalculator::TipCalculator(QWidget *parent)
 	connect(ui.calculateButton, &QPushButton::clicked, [this] {
 		// Set the info label text to the calculated text.
 		ui.infoLabel->setText(Calculate().c_str());
-	});
+	}); 
 }
 
 std::string TipCalculator::Calculate() {
@@ -26,8 +29,8 @@ std::string TipCalculator::Calculate() {
 
 	// Initalize double variables, and parse the string counterpart to a double.
 	double billInputDouble = billInput.toDouble();
-	double percentageInputDouble = percentageInput.toDouble();
-
+	double percentageInputDouble = percentageInput.toDouble(); 
+	 
 	// Check if it's zero or a negative number.
 	if (percentageInputDouble <= 0 || billInputDouble <= 0)
 		return "Error!";
