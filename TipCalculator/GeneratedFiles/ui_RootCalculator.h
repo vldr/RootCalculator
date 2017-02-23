@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'TipCalculator.ui'
+** Form generated from reading UI file 'RootCalculator.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_TIPCALCULATOR_H
-#define UI_TIPCALCULATOR_H
+#ifndef UI_ROOTCALCULATOR_H
+#define UI_ROOTCALCULATOR_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -29,26 +29,24 @@ public:
     QPushButton *calculateButton;
     QLineEdit *billInput;
     QLabel *label;
-    QLineEdit *percentInput;
-    QLabel *label_2;
     QLabel *infoLabel;
 
     void setupUi(QMainWindow *TipCalculatorClass)
     {
         if (TipCalculatorClass->objectName().isEmpty())
             TipCalculatorClass->setObjectName(QStringLiteral("TipCalculatorClass"));
-        TipCalculatorClass->resize(275, 235);
+        TipCalculatorClass->resize(241, 173);
         TipCalculatorClass->setStyleSheet(QStringLiteral("background-color:rgb(255, 255, 255,0);"));
         centralWidget = new QWidget(TipCalculatorClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setStyleSheet(QLatin1String("\n"
 "QWidget {\n"
 "	background-color:rgb(45, 45, 45);\n"
-"	border-top:1px solid rgb(2, 179, 255);\n"
+"	border-top:2px solid rgb(234, 1, 255);\n"
 "}"));
         calculateButton = new QPushButton(centralWidget);
         calculateButton->setObjectName(QStringLiteral("calculateButton"));
-        calculateButton->setGeometry(QRect(10, 180, 121, 41));
+        calculateButton->setGeometry(QRect(10, 120, 121, 41));
         calculateButton->setStyleSheet(QLatin1String("QPushButton {\n"
 "border:1px solid rgb(27, 27, 27);\n"
 "border-bottom:2px solid rgb(27, 27, 27);\n"
@@ -67,7 +65,7 @@ public:
 "}"));
         billInput = new QLineEdit(centralWidget);
         billInput->setObjectName(QStringLiteral("billInput"));
-        billInput->setGeometry(QRect(10, 80, 251, 31));
+        billInput->setGeometry(QRect(10, 80, 221, 31));
         QFont font;
         font.setPointSize(13);
         billInput->setFont(font);
@@ -84,26 +82,9 @@ public:
         label->setStyleSheet(QLatin1String("color:gray;\n"
 "padding-left:2px;\n"
 "border:none;"));
-        percentInput = new QLineEdit(centralWidget);
-        percentInput->setObjectName(QStringLiteral("percentInput"));
-        percentInput->setGeometry(QRect(10, 140, 251, 31));
-        percentInput->setFont(font);
-        percentInput->setStyleSheet(QLatin1String("border:1px solid rgb(27, 27, 27);\n"
-"border-bottom:2px solid rgb(27, 27, 27);\n"
-"\n"
-"background-color:rgb(37, 37, 37);\n"
-"color:rgb(173, 173, 173);\n"
-"border-radius:5px;\n"
-"padding:5px;"));
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(10, 120, 251, 16));
-        label_2->setStyleSheet(QLatin1String("color:gray;\n"
-"padding-left:2px;\n"
-"border:none;"));
         infoLabel = new QLabel(centralWidget);
         infoLabel->setObjectName(QStringLiteral("infoLabel"));
-        infoLabel->setGeometry(QRect(10, 10, 251, 41));
+        infoLabel->setGeometry(QRect(10, 10, 221, 41));
         QFont font1;
         font1.setPointSize(8);
         infoLabel->setFont(font1);
@@ -124,10 +105,8 @@ public:
         TipCalculatorClass->setWindowTitle(QApplication::translate("TipCalculatorClass", "TipCalculator", Q_NULLPTR));
         calculateButton->setText(QApplication::translate("TipCalculatorClass", "Calculate", Q_NULLPTR));
         billInput->setText(QString());
-        label->setText(QApplication::translate("TipCalculatorClass", "Your bill:", Q_NULLPTR));
-        percentInput->setText(QString());
-        label_2->setText(QApplication::translate("TipCalculatorClass", "Percentage:", Q_NULLPTR));
-        infoLabel->setText(QApplication::translate("TipCalculatorClass", "Calculate your tip.", Q_NULLPTR));
+        label->setText(QApplication::translate("TipCalculatorClass", "Quadratic Equation:", Q_NULLPTR));
+        infoLabel->setText(QApplication::translate("TipCalculatorClass", "Type a equation, ex: <br><b>x^2+x-2</b>", Q_NULLPTR));
     } // retranslateUi
 
 };
@@ -138,4 +117,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_TIPCALCULATOR_H
+#endif // UI_ROOTCALCULATOR_H

@@ -1,4 +1,4 @@
-#include "TipCalculator.h"
+#include "RootCalculator.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])

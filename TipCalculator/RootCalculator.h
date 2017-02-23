@@ -1,8 +1,11 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_TipCalculator.h"
+#include "ui_RootCalculator.h"
 #include <sstream>
+#include <Windows.h>
+
+#include <iomanip>
 
 class TipCalculator : public QMainWindow
 {
@@ -10,7 +13,7 @@ class TipCalculator : public QMainWindow
 
 public:
 	TipCalculator(QWidget *parent = Q_NULLPTR);
-	std::string Calculate();
+	QString Calculate();
 private:
 	Ui::TipCalculatorClass ui;
 };

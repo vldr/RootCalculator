@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="TipCalculator">
+    <file>Resources/TipCalculator2.png</file>
     <file>Resources/TipCalculator.png</file>
   </qresource>
 </RCC>

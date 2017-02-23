@@ -43,36 +43,36 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TipCalculator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_TipCalculator.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_RootCalculator.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_TipCalculator.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_RootCalculator.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\qrc_TipCalculator.cpp">
+    <ClCompile Include="GeneratedFiles\qrc_RootCalculator.cpp">
       <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RootCalculator.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="TipCalculator.h">
+    <CustomBuild Include="RootCalculator.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="TipCalculator.ui">
+    <CustomBuild Include="RootCalculator.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="TipCalculator.qrc">
+    <CustomBuild Include="RootCalculator.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeneratedFiles\ui_TipCalculator.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_RootCalculator.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -80,5 +80,11 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon1.ico" />
+    <Image Include="Resources\TipCalculator2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\TipCalculator.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
