@@ -1,3 +1,4 @@
-# Simple Tip Calculator
+# Simple Root Calculator
+## Based off of Tip Calculator
 
-![alt text](http://i.imgur.com/KWEmwFy.png "http://i.imgur.com/J0ZWhHV.png")
+![alt text](http://i.imgur.com/JhY6qZE.png "http://i.imgur.com/JhY6qZE.png")
