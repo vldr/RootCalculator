@@ -31,7 +31,7 @@ TipCalculator::TipCalculator(QWidget *parent)
 QString TipCalculator::Calculate() {
 	QString inputString = ui.billInput->text();
 
-	if (!inputString.contains(QRegExp("[-+]?[0-9.]*x\\^2[-+]?[0-9.]*x[-+]?[0-9.]")))
+	if (!inputString.contains(QRegExp("[-+]*[0-9.]*x\\^2[-+][0-9.]*x[-+][0-9.]")))
 		return "Error!";
 
 	// Remove the x, as they are implied.
