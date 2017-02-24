@@ -7,13 +7,13 @@
 
 #include <iomanip>
 
-class TipCalculator : public QMainWindow
+class RootCalculator : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	TipCalculator(QWidget *parent = Q_NULLPTR);
-	QString Calculate();
+	RootCalculator(QWidget *parent = Q_NULLPTR);
+	QString Calculate(QString inputString);
 private:
 	Ui::TipCalculatorClass ui;
 };

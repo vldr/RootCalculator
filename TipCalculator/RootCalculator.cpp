@@ -3,7 +3,7 @@
 #include <QtPlugin>
 Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
 
-TipCalculator::TipCalculator(QWidget *parent)
+RootCalculator::RootCalculator(QWidget *parent)
 	: QMainWindow(parent)
 {
 	// Setup ui.
@@ -24,14 +24,17 @@ TipCalculator::TipCalculator(QWidget *parent)
 	// Bind the button click to the function.
 	connect(ui.calculateButton, &QPushButton::clicked, [this] {
 		// Set the info label text to the calculated text.
-		ui.infoLabel->setText(Calculate());
+		ui.infoLabel->setText(Calculate(ui.billInput->text()));
 	}); 
 }
 
-QString TipCalculator::Calculate() {
-	QString inputString = ui.billInput->text();
+// Calculates roots of a quadratic equation.
+QString RootCalculator::Calculate(QString inputString) {
+	// Create a regex pattern for us to play with.
+	QRegExp regexPattern("[-+]*[0-9.]*x\\^2[-+][0-9.]*x[-+][0-9.]");
 
-	if (!inputString.contains(QRegExp("[-+]*[0-9.]*x\\^2[-+][0-9.]*x[-+][0-9.]")))
+	// Match the input to the regex.
+	if (!regexPattern.exactMatch(inputString))
 		return "Error!";
 
 	// Remove the x, as they are implied.
@@ -47,21 +50,15 @@ QString TipCalculator::Calculate() {
 	QStringList inputStringOperators;
 
 	// For loop, loop through all the characters to find the operators.
-	for (QChar ch : inputString) {
-		QString s = ch;
-
+	for (QChar ch : inputString)
 		// If the operators are found they are inserted into the list. Dynamically.
 		if (ch == '+' || ch == '-')
-			inputStringOperators.push_back(s);
-	}
+			inputStringOperators.push_back(QString(ch));
 
-	int i = 0;
-	foreach(const QString &str, inputStringPieces) {
-		if (str.isEmpty())
-			inputStringPieces[i] = "1";
-
-		i++;
-	}
+	for (QStringList::iterator it = inputStringPieces.begin(); it != inputStringPieces.end(); ++it)
+		// Check if the item is empty and replace it with a 1.
+		if (QString(*it).isEmpty())
+			*it = "1";
 
 	// Initalise a,b,c as doubles for the equation.
 	double a;
@@ -87,25 +84,20 @@ QString TipCalculator::Calculate() {
 	x[0] = ((-1 * b) + sqrt(b*b - (4 * a*c))) / (2 * a);
 	x[1] = ((-1 * b) - sqrt(b*b - (4 * a*c))) / (2 * a);
 
+	// Check if the x value is zero, and make it absolute. Because yolo.
+	if (abs(x[1]) == 0)
+		x[1] = abs(x[1]);
+	else if (abs(x[0]) == 0)
+		x[0] = abs(x[0]);
+
 	// Check if the roots are numbers.
-	if (isnan(x[0]) && isnan(x[1]))
+	if ((b*b - (4 * a*c)) < 0)
 		return "No Roots";
 
-	// Check if the x value is zero, and make it absolute.
-	if (abs(x[1]) == 0)
-		x[1] = abs(x[0]);
-	 
 	// Find the discrinmant.
-	if (sqrt(b*b - (4 * a*c)) == 0)
+	if ( ( b*b - (4 * a*c) ) == 0)
 		return "x = " + QString::number(x[0], 'g', 15);
 
-	// Check if it's a number.
-	if (isnan(x[0]))
-		return "x = " + QString::number(x[1], 'g', 15); 
-	 
-	// Check if it's a number.
-	if (isnan(x[1]))
-		return "x = " + QString::number(x[0], 'g', 15);
-
-	return "x1 = " + QString::number(x[1], 'g', 15) + "<br>x2 = " + QString::number(x[0], 'g', 15);
+	return "x<span style=\"font-size:7px;\">1</span> = <b>" + QString::number(x[1], 'g', 15) + 
+		"</b><br>x<span style=\"font-size:7px;\">2</span> = <b>" + QString::number(x[0], 'g', 15) + "</b>";
 }
