@@ -31,7 +31,7 @@ RootCalculator::RootCalculator(QWidget *parent)
 // Calculates roots of a quadratic equation.
 QString RootCalculator::Calculate(QString inputString) {
 	// Create a regex pattern for us to play with.
-	QRegExp regexPattern("[-+]*[0-9.]*x\\^2[-+][0-9.]*x[-+][0-9.]");
+	QRegExp regexPattern("[-+]*[0-9.]*x\\^2[-+][0-9.]*x[-+][0-9.]*");
 
 	// Match the input to the regex.
 	if (!regexPattern.exactMatch(inputString))
